@@ -1,0 +1,41 @@
+{
+    "evaluation_step": 11,
+    "evaluation_status": "complete",
+    "primary_model": "HistGradientBoosting",
+    "secondary_model": "CatBoost",
+    "primary_metrics": [
+        "MAE",
+        "RMSE"
+    ],
+    "secondary_metrics": [
+        "sMAPE"
+    ],
+    "diagnostic_metrics": [
+        "MAPE"
+    ],
+    "test_rows": 81521,
+    "final_test_metrics": [
+        {
+            "model": "HistGradientBoosting",
+            "MAE": 20.73132163139622,
+            "RMSE": 74.19111537913719,
+            "sMAPE": 86.84738771187861,
+            "MAPE": 338.96617679643305
+        },
+        {
+            "model": "CatBoost",
+            "MAE": 20.95942217899914,
+            "RMSE": 75.88531048117954,
+            "sMAPE": 82.54974370801241,
+            "MAPE": 308.8818173167366
+        }
+    ],
+    "model_selection_basis": "HistGradientBoosting selected as PRIMARY because it achieved lower MAE and RMSE on both validation and final test data.",
+    "secondary_model_basis": "CatBoost retained as SECONDARY because it achieved lower sMAPE and MAPE.",
+    "generalization_observation": "Both models show higher error on the final test period compared with validation.",
+    "business_observation": "Both models tend to overpredict low-demand observations and underpredict high-demand observations.",
+    "extreme_error_observation": "Both models have difficulty predicting extreme demand observations.",
+    "test_usage_policy": "Final test data was used only for evaluation. No retraining, tuning, feature selection, or model-selection changes were performed.",
+    "raw_predictions_preserved": true,
+    "catboost_negative_predictions_clipped": false
+}

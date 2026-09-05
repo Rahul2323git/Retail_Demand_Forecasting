@@ -1,0 +1,33 @@
+{
+    "project": "Retail Demand Forecasting",
+    "step": "10",
+    "substep": "10.1",
+    "objective": "Tune best-performing ML forecasting models using time-aware validation",
+    "primary_models": [
+        "HistGradientBoosting",
+        "CatBoost"
+    ],
+    "validation_strategy": {
+        "type": "fixed chronological train/validation split",
+        "train_rows": 103272,
+        "validation_rows": 63109,
+        "random_split": false,
+        "shuffle": false,
+        "test_used": false
+    },
+    "metrics": {
+        "primary": [
+            "MAE",
+            "RMSE"
+        ],
+        "secondary": [
+            "sMAPE"
+        ],
+        "diagnostic": [
+            "MAPE"
+        ]
+    },
+    "search_strategy": "staged controlled search",
+    "random_state": 42,
+    "test_policy": "Test set remains completely untouched during hyperparameter tuning and will only be used during final model evaluation."
+}

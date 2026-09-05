@@ -1,0 +1,49 @@
+{
+    "primary_model": "HistGradientBoosting",
+    "secondary_model": "CatBoost",
+    "selection_policy": {
+        "primary_metrics": [
+            "MAE",
+            "RMSE"
+        ],
+        "secondary_metric": "sMAPE",
+        "diagnostic_metric": "MAPE",
+        "validation_used_for_selection": true,
+        "test_used_for_tuning": false,
+        "random_split": false,
+        "shuffle": false,
+        "random_state": 42
+    },
+    "models": {
+        "HistGradientBoosting": {
+            "parameters": {
+                "learning_rate": 0.03,
+                "max_iter": 500,
+                "max_leaf_nodes": 15,
+                "min_samples_leaf": 40,
+                "l2_regularization": 5.0
+            },
+            "validation_metrics": {
+                "MAE": 19.115403939058318,
+                "RMSE": 55.62583506995529,
+                "sMAPE": 84.44498100327023,
+                "MAPE": 302.72878965920245
+            }
+        },
+        "CatBoost": {
+            "parameters": {
+                "iterations": 600,
+                "learning_rate": 0.04,
+                "depth": 9,
+                "l2_leaf_reg": 5.0
+            },
+            "validation_metrics": {
+                "MAE": 19.239601142768574,
+                "RMSE": 56.555438352708016,
+                "sMAPE": 80.11047481126717,
+                "MAPE": 274.47716683624697
+            }
+        }
+    },
+    "test_set_status": "NOT USED"
+}

@@ -1,0 +1,23 @@
+{
+    "model": "HistGradientBoostingRegressor",
+    "selection_metric": "MAE",
+    "secondary_selection_metric": "RMSE",
+    "best_params": {
+        "learning_rate": 0.03,
+        "max_iter": 500,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 40,
+        "l2_regularization": 5.0
+    },
+    "validation_metrics": {
+        "MAE": 18.737257979678596,
+        "RMSE": 55.41622287176209,
+        "sMAPE": 83.40533591942017,
+        "MAPE": 294.06256927463795
+    },
+    "test_used_for_tuning": false,
+    "validation_used_for_selection": true,
+    "random_split": false,
+    "shuffle": false,
+    "random_state": 42
+}
